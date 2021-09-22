@@ -1,8 +1,8 @@
 <html>
     <center>
-    <head>
+    <head> <!-- JONIER ARDILA-->
         <title> COMENTARIOS-COMPENSAR</title> <!-- EN ESTA PRIMERA PARTE ENCONTRAMOS LO QUE ES LA CABEZA DELL CODIGO 
-        Y LA PAGINA-->
+        Y LA PAGINA--> 
 </head>
 <body>
     
@@ -12,9 +12,10 @@
     <input type="text" name="nombre" id="nombre" placeholder="Escribe aqupi tu nombre"/>
 </br>
 <h3>Comentario</h3>
+<from method="post" action="comentar.php">
         <textarea name="comentario" id="comentario" placeholder= "Escribe aquí tu comentario"></textarea>
         </br></br>
-        <input type="submit" value="publicar">
+        <input id="enviar" type="submit" onclick="alerta()" value="publicar">
 
         <h2>Comentarios:</h2>
 
@@ -47,9 +48,22 @@ ALMACENAR LOS DATOS DE LOS COMENTARIOS-->
 
 <style>
     body {
-
-
+        font-size: 16px;
+        margin-top: 25px !important;
         background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);
+}
+form{
+    padding: 50px 20px;
+    background-color: #ededed;
+    margin: calc(25% + 100px);
+    margin-top:70px;
+    padding-top: 28px;
+    margin-bottom: 30px;
+}
+
+textarea {
+    width: 30%;
+    min-height: 120px;
 }
     
 </style>
@@ -58,26 +72,18 @@ ALMACENAR LOS DATOS DE LOS COMENTARIOS-->
 
 <!-- EN ESTE APARTADO ENCONTRAREMOS ALGUNAS CONDICIONES CUANDO AL MOMENTO DE PONER 
 UN COMENTARIO NO SE REALICE DE FORMA CORRECTA-->
-
 <script language="javascript">
-    $("#submit").click(function(){
-        var nombre = $('#nombre').val();
-        var comentario = $('#comentario').val();
 
-        if (nombre=="")
-        {
-            alert('Debe de escribir un numbre');
-            return;
-        }
 
-        if (comentario=="")
-        {
-            alert('Debe de escribir un comentario');
-        }
+    function alerta(){
 
-        $('#formulario').submit();
+       
 
-    });
+        alert("Su Comentario Se Esta Enviando, Aguarde un Momento..");
+        
+    }
     </script>
+
+
 </html>
 
